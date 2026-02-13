@@ -10,17 +10,18 @@
   width: 100%;
 
   .menu-div {
-
+    width: 100%;
+    background-color: var(--color-surface);
 
     ul {
       display: flex;
       flex-direction: row;
       justify-content: space-around;
       width: 100%;
-      border: 1px solid gray;
+      border-top: 5px solid var(--color-main);
+      border-bottom: 5px solid var(--color-main);
       padding: 1rem;
       margin: 0;
-      border-radius: 40px;
       gap: 3rem;
 
       li {
