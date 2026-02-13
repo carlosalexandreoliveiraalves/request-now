@@ -1,0 +1,29 @@
+/* You can add global styles to this file, and also import other style files */
+
+@use "tailwindcss";
+
+/* tema monocromático */
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  font-family: 'Alike Angular', sans-serif;
+}
+
+
+:root {
+  --color-main: #1D546D;
+  --color-text-main: #061E29;
+  --color-secondary: #5F9598;
+  --color-danger: #b30000;
+  --color-success: #4bb543;
+  --color-surface: #F3F4F4; 
+
+  /* para cada tipo de requisição */
+  --color-http-get: #4BB543;
+  --color-http-post: #2563eb;
+  --color-http-delete: #dc2626;
+  --color-http-put: #ca8a04;
+}

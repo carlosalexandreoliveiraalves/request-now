@@ -1,0 +1,14 @@
+:host {
+  display: flex;
+  align-items: center;
+  height: 40px;
+  background-color: var(--color-main);
+  color: white;
+  padding: 0 15px;
+  -webkit-app-region: drag; 
+  user-select: none;
+}
+
+.logo {
+  font-weight: 600;
+}

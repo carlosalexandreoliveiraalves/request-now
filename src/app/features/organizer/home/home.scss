@@ -1,0 +1,17 @@
+main {
+  width: 100%;
+  height: 100vh;
+  margin-top: 1.5vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+.router-div {
+    margin-top: 2vh;
+    width: 90%;
+    border: 2px solid var(--color-main);
+    border-radius: 1vh 1vh 0vh 0vh;
+    height: 100vh;
+}

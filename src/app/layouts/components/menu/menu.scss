@@ -1,0 +1,52 @@
+.main-nav {
+  width: 100%;
+}
+
+.main-div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+
+  .menu-div {
+
+
+    ul {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      width: 100%;
+      border: 1px solid gray;
+      padding: 1rem;
+      margin: 0;
+      border-radius: 40px;
+      gap: 3rem;
+
+      li {
+        a {
+          font-weight: 400;
+          font-size: large;
+          color: gray;
+          gap: 3px;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: center;
+
+          span {
+            color: var(--color-main);
+          }
+        }
+      }
+
+      li:hover {
+        transition: 0.4s;
+        a,
+        span {
+          color: var(--color-text-main);
+        }
+      }
+    }
+  }
+}
