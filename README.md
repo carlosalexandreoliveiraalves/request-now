@@ -12,7 +12,7 @@ OBS: Já deve existir, mas só usar não é tão gostoso quanto fazer. (exceto c
 
 Essa aplicação tem como base a defesa de certos pensamentos, sendo eles:
 - Saída do estado de menoridade;
-- Oposição completa e radical à concepção de mais valor;
+- Oposição completa e radical à extração de mais valor;
 - O não toleramento do intolerante.
 
 ## Para rodar localmente
@@ -21,6 +21,12 @@ Basta rodar na raiz do terminal (dê 'npm install' antes, né)
 
 ```bash
 npm run electron-build
+```
+
+ou também:
+
+```bash
+ng serve
 ```
 
 
