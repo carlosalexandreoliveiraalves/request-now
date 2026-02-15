@@ -1,0 +1,143 @@
+main {
+  width: 100vw;
+  height: 100vh; // Garante que ocupa a tela toda para centralizar
+  background-color: var(--color-surface); // Fundo claro para o card escuro contrastar
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+
+  .card-div {
+    width: 100%;
+    max-width: 450px;
+    background-color: var(--color-main);
+    padding: 2.5rem;
+    border-radius: 16px;
+    box-shadow:
+      0 20px 25px -5px rgba(0, 0, 0, 0.2),
+      0 10px 10px -5px rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--color-secondary);
+
+    .title-div {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      margin-bottom: 1vh;
+
+      h1 {
+        background-color: var(--color-surface);
+        color: var(--color-main);
+        font-size: 2em;
+        border-radius: 0.4em;
+        font-weight: 600;
+        padding: 0.4em 2em;
+        margin-bottom: 1vh;
+      }
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem; // Espaçamento consistente entre blocos
+
+      div {
+        display: flex;
+        flex-direction: column;
+        gap: 0.4rem;
+
+        label {
+          color: var(--color-surface);
+          font-size: 0.9rem;
+          font-weight: 500;
+          letter-spacing: 0.5px;
+        }
+
+        input {
+          width: 100%;
+          padding: 0.8rem 1rem;
+          border-radius: 8px;
+          border: 1px solid var(--color-secondary);
+          background-color: rgba(255, 255, 255, 0.05);
+          color: white;
+          font-size: 1rem;
+          transition: all 0.2s ease;
+
+          &::placeholder {
+            color: rgba(255, 255, 255, 0.3);
+          }
+
+          &:focus {
+            outline: none;
+            border-color: #fff;
+            background-color: rgba(255, 255, 255, 0.1);
+            box-shadow: 0 0 0 3px rgba(95, 149, 152, 0.3);
+          }
+        }
+
+        small {
+          color: var(--color-secondary);
+          font-size: 0.75rem;
+          font-style: italic;
+          opacity: 0.9;
+          margin-bottom: 0.1rem;
+        }
+      }
+
+      button[type='submit'] {
+        margin-top: 1rem;
+        padding: 1rem;
+        border-radius: 8px;
+        border: none;
+        background-color: var(--color-secondary);
+        color: white;
+        font-weight: bold;
+        font-size: 1rem;
+        cursor: pointer;
+        transition:
+          transform 0.1s,
+          background-color 0.2s;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &:hover {
+          background-color: #76acae;
+          transform: translateY(-2px);
+        }
+
+        &:active {
+          transform: translateY(0);
+        }
+
+        &:disabled {
+          opacity: 0.5;
+          cursor: not-allowed;
+          filter: grayscale(1);
+        }
+      }
+    }
+  }
+
+  .error-container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 4px;
+
+    .error-msg {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      font-weight: 650;
+      color: var(--color-surface);
+      font-size: 0.8em;
+      font-weight: 550;
+      animation: fadeIn 0.4s ease-in;
+
+      span {
+        margin-right: 4px;
+        color: var(--color-danger) !important;
+      }
+    }
+  }
+}

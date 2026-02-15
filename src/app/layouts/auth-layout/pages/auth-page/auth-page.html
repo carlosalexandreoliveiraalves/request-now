@@ -1,0 +1,26 @@
+<main>
+  <div class="image-div">
+    <img style="position: absolute;" src="assets/images/auth-background.jpg" alt="Background" />
+
+    <nav class="nav-wrapper">
+      <ul>
+        <li routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+          <a routerLink="/register">
+            <span class="material-icons"> account_box </span>
+            Cadastrar
+          </a>
+        </li>
+        <li routerLinkActive="active">
+          <a routerLink="/login">
+            <span class="material-icons"> login </span>
+            Entrar
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+
+  <div class="form-div">
+    <router-outlet></router-outlet>
+  </div>
+</main>

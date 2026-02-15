@@ -1,0 +1,44 @@
+<main>
+  <div class="card-div">
+    <div class="title-div">
+      <h1>Entrar</h1>
+    </div>
+
+    <form (submit)="onSubmit($event)" action="">
+      <div>
+        <label for="">E-mail</label>
+        <input placeholder="user@email.com" [formField]="loginForm.email" type="email" />
+
+        @if (loginForm.email().touched() && loginForm.password().errors(); as errors) {
+          <div class="error-container">
+            @for (error of errors; track error.kind) {
+              <p class="error-msg">
+                <span class="material-icons">assignment_late</span>{{ error.message }}
+              </p>
+            }
+          </div>
+        }
+      </div>
+
+      <div>
+        <label for="">Senha</label>
+        <input [formField]="loginForm.password" type="password" />
+
+        @if (loginForm.password().touched() && loginForm.password().errors(); as errors) {
+          <div class="error-container">
+            @for (error of errors; track error.kind) {
+              <p class="error-msg">
+                <span class="material-icons">assignment_late</span>{{ error.message }}
+              </p>
+            }
+          </div>
+        }
+      </div>
+
+      <button type="submit" [disabled]="loginForm().invalid()">
+        <span class="material-icons">arrow_right_alt</span>
+        <span>Entrar</span>
+      </button>
+    </form>
+  </div>
+</main>

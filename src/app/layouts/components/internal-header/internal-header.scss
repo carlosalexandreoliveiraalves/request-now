@@ -62,16 +62,15 @@ header {
     flex-direction: row;
     align-items: center;
     width: 100%;
-    background-color: var(--color-surface); /* Fundo claro para contraste */
+    background-color: var(--color-surface);
     border-radius: 8px;
     padding: 0.4rem;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Sombra para "flutuar" */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 
-    /* Dropdown de Métodos */
     select {
       background-color: transparent;
       border: none;
-      border-right: 1px solid var(--color-secondary); /* Separador */
+      border-right: 1px solid var(--color-secondary);
       color: var(--color-text-main);
       font-weight: 700;
       padding: 0.8rem 1.2rem;
@@ -80,9 +79,8 @@ header {
       font-size: 1rem;
     }
 
-    /* Campo de Texto da URL */
     input {
-      flex-grow: 1; /* Ocupa o espaço restante */
+      flex-grow: 1;
       background-color: transparent;
       border: none;
       padding: 0.8rem 1rem;
@@ -95,10 +93,9 @@ header {
       }
     }
 
-    /* Botão de Enviar */
     button {
       background-color: var(--color-secondary);
-      color: #fff; /* Fixo branco para leitura no botão colorido */
+      color: #fff;
       border: none;
       border-radius: 6px;
       padding: 0.6rem 1.5rem;

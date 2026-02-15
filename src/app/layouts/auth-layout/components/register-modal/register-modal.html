@@ -1,0 +1,86 @@
+<main>
+  <div class="card-div">
+    <div class="title-div">
+      <h1>Cadastrar</h1>
+    </div>
+
+    <form (submit)="onSubmit($event)" novalidate>
+      <div class="input-group">
+        <label>Nome Completo</label>
+        <input [formField]="registerForm.name" type="text" placeholder="Seu nome" />
+
+        @if (registerForm.name().touched() && registerForm.name().errors(); as errors) {
+          <div class="error-container">
+            @for (error of errors; track error.kind) {
+              <p class="error-msg">
+                <span class="material-icons">assignment_late</span>{{ error.message }}
+              </p>
+            }
+          </div>
+        }
+      </div>
+
+      <div class="input-group">
+        <label>E-mail Corporativo</label>
+        <input placeholder="user@email.com" [formField]="registerForm.email" type="email" />
+
+        @if (registerForm.email().touched() && registerForm.email().errors(); as errors) {
+          <div class="error-container">
+            @for (error of errors; track error.kind) {
+              <p class="error-msg">
+                <span class="material-icons">assignment_late</span>{{ error.message }}
+              </p>
+            }
+          </div>
+        }
+      </div>
+
+      <div class="input-group">
+        <label>Senha</label>
+        <div class="requirements">
+          <small>• Mínimo 10 caracteres</small>
+          <small>• Maiúsculas, minúsculas e número</small>
+          <small>• Caracter especial (!@#$%^&*)</small>
+        </div>
+        <input [formField]="registerForm.password" type="password" />
+
+        @if (registerForm.password().touched() && registerForm.password().errors(); as errors) {
+          <div class="error-container">
+            @for (error of errors; track error.kind) {
+              <p class="error-msg">
+                <span class="material-icons">assignment_late</span>{{ error.message }}
+              </p>
+            }
+          </div>
+        }
+      </div>
+
+      <div class="input-group">
+        <label>Confirmação</label>
+        <input
+          [formField]="registerForm.confirmPassword"
+          type="password"
+          placeholder="Repita a senha"
+        />
+
+        @if (
+          registerForm.confirmPassword().touched() && registerForm.confirmPassword().errors();
+          as errors
+        ) {
+          <div class="error-container">
+            @for (error of errors; track error.kind) {
+              <p class="error-msg">
+                <span class="material-icons">assignment_late</span>{{ error.message }}
+              </p>
+            }
+          </div>
+        }
+      </div>
+
+      <button type="submit" [disabled]="registerForm().invalid()">
+        <span class="material-icons">person_add</span>
+        <span>Criar Conta</span>
+      </button>
+    </form>
+  </div>
+</main>

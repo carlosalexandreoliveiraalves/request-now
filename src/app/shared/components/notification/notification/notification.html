@@ -1,0 +1,15 @@
+@if (notificationService.message(); as msg) {
+  <div class="toast-card" [ngClass]="msg.type">
+    <div class="icon">
+      <span class="material-icons">
+        {{ msg.type === 'success' ? 'check_circle' : 'error' }}
+      </span>
+    </div>
+    <div class="content">
+      <p>{{ msg.text }}</p>
+    </div>
+    <button class="close-btn" (click)="notificationService.clearManual()">
+      <span class="material-icons">close</span>
+    </button>
+  </div>
+}
