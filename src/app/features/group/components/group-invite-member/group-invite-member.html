@@ -1,0 +1,67 @@
+<div class="modal-overlay">
+  <div class="modal-container">
+    <div class="modal-header">
+      <div class="header-content">
+        <h2>Adicionar membro - '{{ group().name }}'</h2>
+        <p class="subtitle">Preencha os dados para enviar o convite.</p>
+      </div>
+
+      <button type="button" class="close-btn" (click)="closeInvite()">
+        <span class="material-icons">close</span>
+      </button>
+    </div>
+
+    <form (submit)="onSubmit($event)">
+      <div class="input-group">
+        <label for="email">E-mail do Usuário</label>
+        <input
+          [formField]="groupForm.email"
+          id="email"
+          type="email"
+          placeholder="exemplo@email.com"
+        />
+      </div>
+
+      @if (groupForm.email().touched() && groupForm.email().errors(); as errors) {
+        <div class="error-container">
+          @for (error of errors; track error.kind) {
+            <p class="error-msg">
+              <span class="material-icons">assignment_late</span>{{ error.message }}
+            </p>
+          }
+        </div>
+      }
+
+      <div class="input-group">
+        <label for="role">Permissão (Cargo)</label>
+        <select [formField]="groupForm.role" id="role">
+          <option value="VIEWER">Visualizador</option>
+          <option value="EDITOR">Editor</option>
+          <option value="ADMIN">Administrador</option>
+          <option value="OWNER">Proprietário</option>
+        </select>
+      </div>
+
+      @if (groupForm.role().touched() && groupForm.role().errors(); as errors) {
+        <div class="error-container">
+          @for (error of errors; track error.kind) {
+            <p class="error-msg">
+              <span class="material-icons">assignment_late</span>{{ error.message }}
+            </p>
+          }
+        </div>
+      }
+
+      <div class="form-actions">
+        <button type="button" class="btn-cancel" (click)="closeInvite()">
+          <span>Cancelar</span>
+        </button>
+
+        <button type="submit" class="btn-submit" [disabled]="groupForm().invalid()">
+          <span class="material-icons">send</span>
+          <span>Enviar Convite</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

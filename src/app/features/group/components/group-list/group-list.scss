@@ -1,0 +1,71 @@
+.list-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  padding: 10px;
+  gap: 1vw;
+}
+
+@media screen and (max-width: 1200px) {
+  .list-container {
+    grid-template-columns: auto auto;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .list-container {
+    grid-template-columns: auto;
+  }
+}
+
+
+//deixei a IA
+
+
+.empty-state {
+  /* Mantive suas propriedades */
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  grid-column: 1 / -1; /* OBRIGATÓRIO: Faz ocupar todas as colunas do grid */
+  flex-direction: column; /* Empilha ícone, título e texto */
+  padding: 4rem 1rem;
+  background-color: #f8f9fa; /* Fundo sutil */
+  border: 2px dashed #cbd5e1; /* Borda tracejada clássica de "espaço vazio" */
+  border-radius: 12px;
+  box-sizing: border-box;
+  text-align: center;
+  margin-top: 1rem;
+
+  .icon-circle {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: rgba(29, 84, 109, 0.1); /* Sua cor Main com transparência */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1.5rem;
+
+    .material-icons {
+      font-size: 40px;
+      color: var(--color-main); /* #1D546D */
+    }
+  }
+
+  h3 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--color-main);
+  }
+
+  p {
+    margin: 0;
+    font-size: 1rem;
+    color: var(--color-text-main);
+    opacity: 0.7;
+    max-width: 400px; /* Impede que o texto fique muito largo em telas grandes */
+    line-height: 1.5;
+  }
+}

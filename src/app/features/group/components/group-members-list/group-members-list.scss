@@ -1,0 +1,19 @@
+.members-list-container {
+  margin-top: 1.5rem;
+
+  .list-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .loading-state,
+  .empty-state {
+    text-align: center;
+    padding: 2rem;
+    color: #888;
+    background: #f9f9f9;
+    border-radius: 8px;
+    font-size: 0.9rem;
+  }
+}

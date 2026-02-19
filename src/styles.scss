@@ -12,6 +12,9 @@ html, body {
   font-family: 'Alike Angular', sans-serif;
 }
 
+button, a {
+  cursor: pointer;
+}
 
 :root {
   --color-main: #1D546D;

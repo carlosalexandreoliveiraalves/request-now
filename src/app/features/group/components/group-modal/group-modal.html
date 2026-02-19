@@ -1,1 +1,67 @@
-<p>group-modal works!</p>
+<div class="modal-overlay">
+  <div class="modal-container">
+    <div class="modal-header">
+      <div class="header-content">
+        <h2>Novo Grupo</h2>
+        <p>Preencha as informações abaixo para criar um novo grupo.</p>
+      </div>
+
+      <button type="button" class="close-btn" (click)="closeModal()">
+        <span class="material-icons">close</span>
+      </button>
+    </div>
+
+    <form (submit)="onSubmit($event)">
+      <div class="input-group">
+        <label for="name">Nome do Grupo</label>
+        <input
+          id="name"
+          type="text"
+          placeholder="Ex: Desenvolvedores Front-end"
+          [formField]="groupForm.name"
+        />
+      </div>
+
+      @if (groupForm.name().touched() && groupForm.name().errors(); as errors) {
+        <div class="error-container">
+          @for (error of errors; track error.kind) {
+            <p class="error-msg">
+              <span class="material-icons">assignment_late</span>{{ error.message }}
+            </p>
+          }
+        </div>
+      }
+
+      <div class="input-group">
+        <label for="desc">Descrição</label>
+        <textarea
+          id="desc"
+          rows="4"
+          placeholder="Descreva o objetivo deste grupo..."
+          [formField]="groupForm.desc"
+        ></textarea>
+      </div>
+
+      @if (groupForm.desc().touched() && groupForm.desc().errors(); as errors) {
+        <div class="error-container">
+          @for (error of errors; track error.kind) {
+            <p class="error-msg">
+              <span class="material-icons">assignment_late</span>{{ error.message }}
+            </p>
+          }
+        </div>
+      }
+
+      <div class="form-actions">
+        <button type="button" class="btn-cancel" (click)="closeModal()">
+          <span>Cancelar</span>
+        </button>
+
+        <button type="submit" class="btn-submit" [disabled]="groupForm().invalid()">
+          <span class="material-icons">save</span>
+          <span>Criar Grupo</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

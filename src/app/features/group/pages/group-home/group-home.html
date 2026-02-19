@@ -1,24 +1,29 @@
-<main>
-  <header>
-    <div class="desc-div">
-
-        <h1> Meu grupos </h1>
-
+<main class="groups-page">
+  <header class="page-header">
+    <div class="header-info">
+      <h1>Meus Grupos</h1>
+      <p>Gerencie seus espaços de trabalho</p>
     </div>
 
-    <div class="options-div">
+    <div class="header-actions">
+      <div class="search-input">
+        <span class="material-icons">search</span>
+        <input type="text" placeholder="Buscar grupos..." />
+      </div>
 
-        <ul>
-            <li> <button type="button"> <span class="material-icons">add</span> Grupo </button> </li>
-        </ul>
-
+      <button (click)="openModal()" type="button" class="btn-create">
+        <span class="material-icons">add</span>
+        <span>Novo Grupo</span>
+      </button>
     </div>
   </header>
 
-  <article> 
-
-    
-
+  <article class="content-grid">
+    <app-group-list> </app-group-list>
   </article>
-
 </main>
+
+@if (this.groupModalService.isModalOpen()) {
+  <app-group-modal> </app-group-modal>
+}
+

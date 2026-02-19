@@ -67,7 +67,7 @@ export class RegisterModal {
     console.log("Status do submit: ", body)
     this.registerService.register(body).subscribe({
       next: (response) => {
-        this.notificationService.showSuccess('Cadastrado. Verifique seu e-mail.');
+        this.notificationService.showSuccess('Conta provisória criada. Verifique seu e-mail seu para completar o cadastro.');
       }
     })
 

@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ConfirmPassword } from './confirm-password';
+import { GroupManagement } from './group-management';
 
-describe('ConfirmPassword', () => {
-  let component: ConfirmPassword;
-  let fixture: ComponentFixture<ConfirmPassword>;
+describe('GroupManagement', () => {
+  let component: GroupManagement;
+  let fixture: ComponentFixture<GroupManagement>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ConfirmPassword]
+      imports: [GroupManagement]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(ConfirmPassword);
+    fixture = TestBed.createComponent(GroupManagement);
     component = fixture.componentInstance;
     await fixture.whenStable();
   });

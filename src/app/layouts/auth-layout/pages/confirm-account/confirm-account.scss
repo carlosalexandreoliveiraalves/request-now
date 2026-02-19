@@ -1,0 +1,113 @@
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  width: 100vw;
+  background-color: #f4f4f4; // Cor de fundo da página
+}
+
+.card-div {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+  overflow: hidden;
+}
+
+.title-div {
+  background-color: var(--color-main);
+  padding: 1.5rem;
+  text-align: center;
+
+  h1 {
+    color: white;
+    margin: 0;
+    font-size: 1.5rem;
+  }
+}
+
+.content-container {
+  padding: 2rem;
+  text-align: center;
+}
+
+.status-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+
+  .material-icons {
+    font-size: 4rem;
+  }
+
+  p {
+    color: var(--color-text-main);
+    font-size: 1.1rem;
+    margin: 0;
+  }
+}
+
+// Estilos específicos por estado
+.loading {
+  .material-icons {
+    color: var(--color-secondary);
+  }
+}
+
+.success {
+  .material-icons {
+    color: var(--color-success);
+  }
+}
+
+.error {
+  .material-icons {
+    color: var(--color-error);
+  }
+  .hint {
+    font-size: 0.9rem;
+    color: #666;
+  }
+}
+
+// Botões
+.action-btn {
+  margin-top: 1rem;
+  padding: 0.8rem 1.5rem;
+  background-color: var(--color-main);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  text-decoration: none;
+  display: inline-block;
+  transition: opacity 0.2s;
+
+  &:hover {
+    opacity: 0.9;
+  }
+
+  &.outline {
+    background-color: transparent;
+    border: 2px solid var(--color-main);
+    color: var(--color-main);
+  }
+}
+
+// Animação de loading
+.spin {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

@@ -1,0 +1,124 @@
+.member-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  background-color: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  transition: all 0.2s ease-in-out;
+  margin-bottom: 0.5rem;
+
+  // Visual para quando o convite ainda não foi aceito
+  &.pending {
+    background-color: #fcfcfc;
+    border-style: dashed; // Borda tracejada para indicar "provisório"
+
+    .avatar-container {
+      background-color: #ccc; // Avatar cinza
+      opacity: 0.7;
+    }
+    .user-name,
+    .user-email {
+      opacity: 0.7;
+    }
+  }
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    border-color: #d0d0d0;
+  }
+
+  .avatar-container {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background-color: #1d546d;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    font-size: 0.9rem;
+    flex-shrink: 0;
+  }
+
+  .info-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    .name-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .user-name {
+      margin: 0;
+      font-size: 1rem;
+      font-weight: 600;
+      color: #333;
+    }
+
+    .user-email {
+      margin: 0;
+      font-size: 0.85rem;
+      color: #777;
+    }
+
+    .status-badge.pending {
+      font-size: 0.65rem;
+      background-color: #fff3cd;
+      color: #856404;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+  }
+
+  .role-container {
+    .role-badge {
+      font-size: 0.75rem;
+      padding: 4px 8px;
+      border-radius: 6px;
+      font-weight: 600;
+      background-color: #f0f0f0;
+      color: #555;
+
+      &.OWNER {
+        background-color: #e3f2fd;
+        color: #0d47a1;
+        border: 1px solid #bbdefb;
+      }
+
+      &.ADMIN {
+        background-color: #e8f5e9;
+        color: #1b5e20;
+        border: 1px solid #c8e6c9;
+      }
+
+      &.DEVELOPER {
+        background-color: #e8f5e9;
+        color: #5e1b21;
+        border: 1px solid #c8e6c9;
+      }
+
+      &.VIEWER {
+        background-color: #e8f5e9;
+        color: #005757;
+        border: 1px solid #c8e6c9;
+      }
+
+      &.DEVELOPER {
+        background-color: #e8f5e9;
+        color: #1b255e;
+        border: 1px solid #c8e6c9;
+      }
+    }
+  }
+}

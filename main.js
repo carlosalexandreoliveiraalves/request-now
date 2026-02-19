@@ -1,4 +1,4 @@
-const { app, BrowserWindow } = require('electron');
+const { app, BrowserWindow, globalShortcut } = require('electron');
 
 let appWindow;
 
@@ -8,9 +8,9 @@ function createWindow() {
     height: 800,
     titleBarStyle: 'hidden',
     titleBarOverlay: {
-      color: '#6c15c6', 
-      symbolColor: '#ffffff', 
-      height: 40, 
+      color: '#061E29',
+      symbolColor: '#ffffff',
+      height: 40,
     },
     webPreferences: {
       nodeIntegration: true,
@@ -21,6 +21,29 @@ function createWindow() {
   appWindow.loadFile('dist/request-now-app/browser/index.html');
 
   appWindow.webContents.openDevTools();
+  appWindow.on('focus', () => {
+    // Intercepta Ctrl + R (Reload normal)
+    globalShortcut.register('CommandOrControl+R', () => {
+      console.log('Reloading to index.html...');
+      if (appWindow) appWindow.loadFile('dist/request-now-app/browser/index.html');
+    });
+
+    // Intercepta Ctrl + Shift + R (Hard Reload)
+    globalShortcut.register('CommandOrControl+Shift+R', () => {
+      console.log('Hard Reloading to index.html...');
+      if (appWindow) appWindow.loadFile('dist/request-now-app/browser/index.html');
+    });
+
+    // Intercepta F5
+    globalShortcut.register('F5', () => {
+      console.log('F5 Reloading...');
+      if (appWindow) appWindow.loadFile('dist/request-now-app/browser/index.html');
+    });
+  });
+
+  appWindow.on('blur', () => {
+    globalShortcut.unregisterAll();
+  });
 
   appWindow.on('closed', function () {
     appWindow = null;
@@ -29,4 +52,11 @@ function createWindow() {
 
 app.whenReady().then(() => {
   createWindow();
+});
+
+// Quit when all windows are closed.
+app.on('window-all-closed', () => {
+  if (process.platform !== 'darwin') {
+    app.quit();
+  }
 });

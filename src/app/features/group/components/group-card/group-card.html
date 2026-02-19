@@ -1,1 +1,47 @@
-<p>group-card works!</p>
+<div class="card">
+  <div class="card-header">
+    <div class="icon-header">
+      <span class="material-icons">folder</span>
+    </div>
+
+    <div class="icons-div">
+           <button class="more-btn" (click)="openInvite()">
+        <span class="material-icons">person_add</span>
+      </button>
+
+      <button class="more-btn">
+        <span class="material-icons">delete</span>
+      </button>
+
+ 
+    </div>
+  </div>
+
+  <div class="card-body">
+    <h2 class="title">{{ group().name }}</h2>
+
+    <p class="description">
+      {{ group().desc || 'Sem descrição definida para este grupo.' }}
+    </p>
+  </div>
+
+  <div class="card-footer">
+    <span class="date-info">
+      <span class="material-icons">calendar_today</span>
+      {{ group().created_at | date: 'dd/MM/yyyy' }}
+    </span>
+
+    <button (click)="openManagement()" class="access-btn">
+      Gerenciar
+      <span class="material-icons">arrow_forward</span>
+    </button>
+  </div>
+</div>
+
+@if (groupInviteModalService.isInviteOpen(group().id!)) {
+  <app-group-invite-member [group]="group()"> </app-group-invite-member>
+}
+
+@if (groupManagementModalService.isManagementOpen(group().id!)) {
+  <app-group-management [group]="group()"> </app-group-management>
+}

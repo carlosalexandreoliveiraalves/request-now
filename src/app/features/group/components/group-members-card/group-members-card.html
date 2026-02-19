@@ -1,0 +1,22 @@
+<div class="member-card" [class.pending]="!member().confirmed_at">
+  <div class="avatar-container">
+    <span class="initials">{{ getInitials(member().User!.name) }}</span>
+  </div>
+
+  <div class="info-container">
+    <div class="name-row">
+      <h3 class="user-name">{{ member().User?.name || 'Usuário Convidado' }}</h3>
+
+      @if (!member().confirmed_at) {
+        <span class="status-badge pending">Pendente</span>
+      }
+    </div>
+    <p class="user-email">{{ member().User?.email }}</p>
+  </div>
+
+  <div class="role-container">
+    <span class="role-badge" [class]="member().role">
+      {{ member().role }}
+    </span>
+  </div>
+</div>

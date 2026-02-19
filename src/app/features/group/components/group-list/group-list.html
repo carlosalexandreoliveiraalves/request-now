@@ -1,1 +1,13 @@
-<p>group-list works!</p>
+<div class="list-container">
+  @for (group of groupList(); track group.id) {
+    <app-group-card [group]="group"></app-group-card>
+  } @empty {
+    <div class="empty-state">
+      <div class="icon-circle">
+        <span class="material-icons">groups_2</span>
+      </div>
+      <h3>Nenhum grupo encontrado</h3>
+      <p>Você ainda não participa de nenhum grupo. Crie um novo para começar.</p>
+    </div>
+  }
+</div>

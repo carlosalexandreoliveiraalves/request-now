@@ -9,7 +9,7 @@
         <label for="">E-mail</label>
         <input placeholder="user@email.com" [formField]="loginForm.email" type="email" />
 
-        @if (loginForm.email().touched() && loginForm.password().errors(); as errors) {
+        @if (loginForm.email().touched() && loginForm.email().errors(); as errors) {
           <div class="error-container">
             @for (error of errors; track error.kind) {
               <p class="error-msg">

@@ -1,0 +1,40 @@
+<main>
+  <div class="card-div">
+    <div class="title-div">
+      <h1>Validação de Conta</h1>
+    </div>
+
+    <div class="content-container">
+      
+      @if (status() === 'loading') {
+        <div class="status-box loading">
+          <span class="material-icons spin">sync</span>
+          <p>{{ message() }}</p>
+        </div>
+      }
+
+      @if (status() === 'success') {
+        <div class="status-box success">
+          <span class="material-icons">check_circle</span>
+          <p>{{ message() }}</p>
+          
+          <button routerLink="/login" class="action-btn">
+            Ir para Login
+          </button>
+        </div>
+      }
+
+      @if (status() === 'error') {
+        <div class="status-box error">
+          <span class="material-icons">error</span>
+          <p>{{ message() }}</p>
+
+          <button routerLink="/" class="action-btn outline">
+            Voltar ao Início
+          </button>
+        </div>
+      }
+
+    </div>
+  </div>
+</main>
